@@ -161,3 +161,74 @@ DNAStrand.pairs = {
 // highAndLow("1 2 3 4 5"); // return "5 1"
 // highAndLow("1 2 -3 4 5"); // return "5 -3"
 // highAndLow("1 9 3 4 -5"); // return "9 -5"
+
+function highAndLow(numbers){
+  let nums = numbers.split(' ').map(Number)
+  let high = nums[0]
+  let low = nums[0]
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] > high) {
+      high = nums[i]
+    }
+    if (nums[i] < low) {
+      low = nums[i]
+    }
+  }
+  return high + ' ' + low
+}
+// Optimal Solution
+
+function highAndLow(numbers){
+  numbers = numbers.split(' ');
+  return `${Math.max(...numbers)} ${Math.min(...numbers)}`;
+}
+
+// Multiples of 3 or 5
+
+function solution(number){
+  let sum = 0
+  let i = 0
+  while (i < number) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      sum += i
+    }
+    i++
+  }
+  return sum
+}
+
+var majorityElement = function (nums) {
+  const sortArr = nums.sort()
+  let maxCounter = 0
+  let counter = 0
+  let majorityEl = null
+  for (let i = 0; i < sortArr.length; i++) {
+    for (let j = 0; j < sortArr.length; j++) {
+      if (sortArr[i] === sortArr[j]) {
+        counter++
+        if (counter > maxCounter) {
+          majorityEl = sortArr[i]
+          maxCounter = counter
+        }
+      }
+      else if (sortArr[i] !== sortArr[j]) {
+        counter = 0
+      }
+
+    }
+  }
+  return majorityEl
+}
+
+console.log(majorityElement([3, 3, 4]))
+
+// optimal solution
+
+var majorityElement = function(nums) {
+  const obj = {};
+  for (let i = 0; i < nums.length; i++) {
+      if (!obj[nums[i]]) obj[nums[i]] = 1;
+      else obj[nums[i]] += 1;
+      if (obj[nums[i]] > nums.length / 2) return nums[i];
+  }
+};
