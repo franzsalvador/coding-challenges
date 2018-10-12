@@ -232,3 +232,27 @@ var majorityElement = function(nums) {
       if (obj[nums[i]] > nums.length / 2) return nums[i];
   }
 };
+
+// Given a non-empty array of integers, every element appears twice except for one. Find that single one.
+
+// Note:
+
+// Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+
+var singleNumber = function(nums) {
+  var numsSort = nums.sort()
+  if (numsSort.length % 2 !== 0) {
+      for (var i = numsSort.length - 1; i >= 0; i -= 2) {
+          if (numsSort[i] !== numsSort[i - 1]) {
+              return numsSort[i]
+          }
+      }
+  }
+  else {
+      for (var o = 0; o < numsSort.length; o += 2) {
+          if (numsSort[o] !== numsSort[o + 1]) {
+              return numsSort[o]
+          }
+      }
+  }
+};
