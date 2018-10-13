@@ -65,13 +65,13 @@ check([66, 101], 66)
 // of the word. If the word's length is odd, return the middle character. If the
 // word's length is even, return the middle 2 characters.
 
-Kata.getMiddle("test") should return "es"
+// Kata.getMiddle("test") should return "es"
 
-Kata.getMiddle("testing") should return "t"
+// Kata.getMiddle("testing") should return "t"
 
-Kata.getMiddle("middle") should return "dd"
+// Kata.getMiddle("middle") should return "dd"
 
-Kata.getMiddle("A") should return "A"
+// Kata.getMiddle("A") should return "A"
 
 function getMiddle(s) {
   if (s.length % 2 === 0) {
@@ -95,27 +95,27 @@ console.log(getMiddle('testing'))
 // All input strings will be nonempty, and will only consist of parentheses,
 // brackets and curly braces: ()[]{}.
 
-function validBraces(braces) {
-  for (var i = 0; i < braces.length; i++) {
-    if (braces[i].indexof() !== braces[length - 1 - i]) {
-      return false
-    }
-    else return true
-  }
-}
+// function validBraces(braces) {
+//   for (var i = 0; i < braces.length; i++) {
+//     if (braces.indexof(braces[i]) !== braces[length - 1 - i]) {
+//       return false
+//     }
+//     else return true
+//   }
+// }
 // use first index last index
 
-console.log(validBraces('(){}[]'))
-console.log(validBraces('([{}])'))
-console.log(validBraces('(}'))
-console.log(validBraces('[(])'))
-console.log(validBraces('[({})](]'))
+// console.log(validBraces('(){}[]'))
+// console.log(validBraces('([{}])'))
+// console.log(validBraces('(}'))
+// console.log(validBraces('[(])'))
+// console.log(validBraces('[({})](]'))
 
 // DNAStrand ("ATTGC") # return "TAACG"
 
 // DNAStrand ("GTAT") # return "CATA"
 
-Complementary DNA
+// Complementary DNA
 
 function DNAStrand(dna) {
   let newString = ''
@@ -139,19 +139,6 @@ function DNAStrand(dna) {
 DNAStrand('AAAA')
 DNAStrand('ATTGC')
 DNAStrand('GTAT')
- Answer
-function DNAStrand(dna) {
-  return dna.replace(/./g, function(c) {
-    return DNAStrand.pairs[c]
-  })
-}
-
-DNAStrand.pairs = {
-  A: 'T',
-  T: 'A',
-  C: 'G',
-  G: 'C',
-}
 
 // In this little assignment you are given a string of space separated numbers,
 // and have to return the highest and lowest number.
@@ -162,7 +149,7 @@ DNAStrand.pairs = {
 // highAndLow("1 2 -3 4 5"); // return "5 -3"
 // highAndLow("1 9 3 4 -5"); // return "9 -5"
 
-function highAndLow(numbers){
+function highAndLow(numbers) {
   let nums = numbers.split(' ').map(Number)
   let high = nums[0]
   let low = nums[0]
@@ -176,16 +163,21 @@ function highAndLow(numbers){
   }
   return high + ' ' + low
 }
+
+highAndLow('1 2 3 4 5') // return '5 1'
+highAndLow('1 2 -3 4 5') // return '5 -3'
+highAndLow('1 9 3 4 -5') // return '9 -5'
+
 // Optimal Solution
 
-function highAndLow(numbers){
-  numbers = numbers.split(' ');
-  return `${Math.max(...numbers)} ${Math.min(...numbers)}`;
-}
+// function highAndLow(numbers) {
+//   numbers = numbers.split(' ')
+//   return `${Math.max(...numbers)} ${Math.min(...numbers)}`
+// }
 
 // Multiples of 3 or 5
 
-function solution(number){
+function solution(number) {
   let sum = 0
   let i = 0
   while (i < number) {
@@ -196,6 +188,8 @@ function solution(number){
   }
   return sum
 }
+
+solution(3, 3, 6, 7, 8, 45, 15, 56, 2)
 
 var majorityElement = function (nums) {
   const sortArr = nums.sort()
@@ -224,14 +218,14 @@ console.log(majorityElement([3, 3, 4]))
 
 // optimal solution
 
-var majorityElement = function(nums) {
-  const obj = {};
-  for (let i = 0; i < nums.length; i++) {
-      if (!obj[nums[i]]) obj[nums[i]] = 1;
-      else obj[nums[i]] += 1;
-      if (obj[nums[i]] > nums.length / 2) return nums[i];
-  }
-};
+// var majorityElement = function (nums) {
+//   const obj = {};
+//   for (let i = 0; i < nums.length; i++) {
+//     if (!obj[nums[i]]) obj[nums[i]] = 1;
+//     else obj[nums[i]] += 1;
+//     if (obj[nums[i]] > nums.length / 2) return nums[i];
+//   }
+// }
 
 // Single Number
 // Given a non-empty array of integers, every element appears twice except for one. Find that single one.
@@ -240,23 +234,26 @@ var majorityElement = function(nums) {
 
 // Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
 
-var singleNumber = function(nums) {
+var singleNumber = function (nums) {
   var numsSort = nums.sort()
   if (numsSort.length % 2 !== 0) {
-      for (var i = numsSort.length - 1; i >= 0; i -= 2) {
-          if (numsSort[i] !== numsSort[i - 1]) {
-              return numsSort[i]
-          }
+    for (var i = numsSort.length - 1; i >= 0; i -= 2) {
+      if (numsSort[i] !== numsSort[i - 1]) {
+        return numsSort[i]
       }
+    }
   }
   else {
-      for (var o = 0; o < numsSort.length; o += 2) {
-          if (numsSort[o] !== numsSort[o + 1]) {
-              return numsSort[o]
-          }
+    for (var o = 0; o < numsSort.length; o += 2) {
+      if (numsSort[o] !== numsSort[o + 1]) {
+        return numsSort[o]
       }
+    }
   }
-};
+}
+
+singleNumber([4, 1, 2, 1, 2])
+singleNumber([4, 1, 2, 1, 2])
 
 // Sort Array By Parity
 // Given an array A of non-negative integers, return an array consisting of all the even elements of A, followed by all the odd elements of A.
@@ -266,15 +263,59 @@ var singleNumber = function(nums) {
 // Output: [2,4,3,1]
 // The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.
 
-var sortArrayByParity = function(A) {
+var sortArrayByParity = function (A) {
   var newArr = []
-  for(var i = 0; i < A.length; i++) {
-      if (A[i] % 2 !== 0 ) {
-          newArr.push(A[i])
-      }
-      if (A[i] % 2 === 0 ) {
-          newArr.unshift(A[i])
-      }
+  for (var i = 0; i < A.length; i++) {
+    if (A[i] % 2 !== 0) {
+      newArr.push(A[i])
+    }
+    if (A[i] % 2 === 0) {
+      newArr.unshift(A[i])
+    }
   }
   return newArr
-};
+}
+
+sortArrayByParity([3, 1, 2, 4])
+
+// Say you have an array for which the ith element is the price of a given stock on day i.
+
+// If you were only permitted to complete at most one transaction (i.e., buy one and sell one share of the stock), design an algorithm to find the maximum profit.
+
+// Note that you cannot sell a stock before you buy one.
+
+// Input: [7,1,5,3,6,4]
+// Output: 5
+// Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+//              Not 7-1 = 6, as selling price needs to be larger than buying price.
+
+// Input: [7,6,4,3,1]
+// Output: 0
+// Explanation: In this case, no transaction is done, i.e. max profit = 0.
+
+// find the lowest buy price
+// find the highest sell price once the buy price is established.
+// of lowest price in the index of prices array, return 0
+// find the profit between each buy and sell day in the array.
+// iterate through the array and subtract sell from buy day.
+
+var maxProfit = function (prices) {
+  let profit = 0
+  if (prices.length === 0) {
+    return 0
+  }
+  for (let i = 0; i < prices.length; i++) {
+    for (let o = prices.length - 1; o >= i; o--) {
+      if ((prices[o] - prices[i]) > profit) {
+        profit = prices[o] - prices[i]
+      }
+    }
+  }
+  return profit
+}
+
+console.log(maxProfit([7, 1, 5, 3, 6, 4]))
+console.log(maxProfit([7, 6, 4, 3, 1]))
+console.log(maxProfit([2, 4, 1]))
+console.log(maxProfit([3, 2, 6, 5, 0, 3]))
+console.log(maxProfit([2, 1, 2, 1, 0, 1, 2]))
