@@ -319,3 +319,26 @@ console.log(maxProfit([7, 6, 4, 3, 1]))
 console.log(maxProfit([2, 4, 1]))
 console.log(maxProfit([3, 2, 6, 5, 0, 3]))
 console.log(maxProfit([2, 1, 2, 1, 0, 1, 2]))
+
+// Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+
+// You may assume no duplicates in the array.
+
+// find the value and return the index
+// find the last value that target is greater than and insert at index + 1 of value being checked.
+
+var searchInsert = function (nums, target) {
+  const newArr = [...nums, target]
+  newArr.sort((a, b) => a - b)
+  if (nums.includes(target)) {
+    return (nums.indexOf(target))
+  }
+  return newArr.indexOf(target)
+}
+
+console.log(searchInsert([1, 3, 5, 6], 5)) // Output: 2
+console.log(searchInsert([1, 3, 5, 6], 2)) // Output: 1
+console.log(searchInsert([1, 3, 5, 6], 7)) // Output: 4
+console.log(searchInsert([1, 3, 5, 6], 0)) // Output: 0
+console.log(searchInsert([1, 2, 3, 4, 5, 10], 2)) // Output 1
+console.log(searchInsert([3, 5, 7, 9, 10], 8)) // Output 3
