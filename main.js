@@ -373,3 +373,26 @@ function list(names) {
   }
   return list
 }
+
+// Reverse Sequence
+// console.log(list([ {name: 'Bart'}, {name: 'Lisa'}, {name: 'Maggie'} ]))
+// // returns 'Bart, Lisa & Maggie'
+
+// console.log(list([ {name: 'Bart'}, {name: 'Lisa'} ]))
+// // returns 'Bart & Lisa'
+
+// console.log(list([ {name: 'Bart'} ]))
+// // returns 'Bart'
+
+// console.log(list([]))
+// // returns ''
+
+const reverseSeq = ranNum => {
+  let reversedSeq = []
+  for (let i = ranNum; i > -1; i--) {
+    reversedSeq.push(i)
+  }
+  return reversedSeq
+}
+
+// console.log(reverseSeq(5))
