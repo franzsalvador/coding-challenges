@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // Given an array nums, write a function to move all 0's
 // to the end of it while maintaining the relative order
 // of the non-zero elements.
@@ -26,8 +27,8 @@ const moveZeroes = function (nums) {
   nums.reverse()
 }
 
-moveZeroes(a)
-moveZeroes(b)
+// moveZeroes(a)
+// moveZeroes(b)
 
 // Reverse a string
 
@@ -48,18 +49,18 @@ var reverseString3 = function (s) {
   return [...s].reverse().join('')
 }
 
-console.log(reverseString('hello'))
-console.log(reverseString2('hello'))
-console.log(reverseString3('hello'))
+// console.log(reverseString('hello'))
+// console.log(reverseString2('hello'))
+// console.log(reverseString3('hello'))
 
-const string = 'string'
-console.log([...string])
+// const string = 'string'
+// console.log([...string])
 
-function check(a, x) {
-  console.log(a.includes(x))
-}
+// function check(a, x) {
+//   console.log(a.includes(x))
+// }
 
-check([66, 101], 66)
+// check([66, 101], 66)
 
 // You are going to be given a word. Your job is to return the middle character
 // of the word. If the word's length is odd, return the middle character. If the
@@ -83,7 +84,7 @@ function getMiddle(s) {
     return s.charAt(s.length / 2)
   }
 }
-console.log(getMiddle('testing'))
+// console.log(getMiddle('testing'))
 
 // Write a function that takes a string of braces, and determines if the order
 // of the braces is valid. It should return true if the string is valid, and
@@ -133,12 +134,12 @@ function DNAStrand(dna) {
       newString += 'G'
     }
   }
-  console.log(newString)
+  return newString
 }
 
-DNAStrand('AAAA')
-DNAStrand('ATTGC')
-DNAStrand('GTAT')
+// DNAStrand('AAAA')
+// DNAStrand('ATTGC')
+// DNAStrand('GTAT')
 
 // In this little assignment you are given a string of space separated numbers,
 // and have to return the highest and lowest number.
@@ -164,9 +165,9 @@ function highAndLow(numbers) {
   return high + ' ' + low
 }
 
-highAndLow('1 2 3 4 5') // return '5 1'
-highAndLow('1 2 -3 4 5') // return '5 -3'
-highAndLow('1 9 3 4 -5') // return '9 -5'
+// highAndLow('1 2 3 4 5') // return '5 1'
+// highAndLow('1 2 -3 4 5') // return '5 -3'
+// highAndLow('1 9 3 4 -5') // return '9 -5'
 
 // Optimal Solution
 
@@ -189,7 +190,7 @@ function solution(number) {
   return sum
 }
 
-solution(3, 3, 6, 7, 8, 45, 15, 56, 2)
+// solution(3, 3, 6, 7, 8, 45, 15, 56, 2)
 
 var majorityElement = function (nums) {
   const sortArr = nums.sort()
@@ -214,7 +215,7 @@ var majorityElement = function (nums) {
   return majorityEl
 }
 
-console.log(majorityElement([3, 3, 4]))
+// console.log(majorityElement([3, 3, 4]))
 
 // optimal solution
 
@@ -252,8 +253,8 @@ var singleNumber = function (nums) {
   }
 }
 
-singleNumber([4, 1, 2, 1, 2])
-singleNumber([4, 1, 2, 1, 2])
+// singleNumber([4, 1, 2, 1, 2])
+// singleNumber([4, 1, 2, 1, 2])
 
 // Sort Array By Parity
 // Given an array A of non-negative integers, return an array consisting of all the even elements of A, followed by all the odd elements of A.
@@ -276,7 +277,7 @@ var sortArrayByParity = function (A) {
   return newArr
 }
 
-sortArrayByParity([3, 1, 2, 4])
+// sortArrayByParity([3, 1, 2, 4])
 
 // Say you have an array for which the ith element is the price of a given stock on day i.
 
@@ -314,11 +315,11 @@ var maxProfit = function (prices) {
   return profit
 }
 
-console.log(maxProfit([7, 1, 5, 3, 6, 4]))
-console.log(maxProfit([7, 6, 4, 3, 1]))
-console.log(maxProfit([2, 4, 1]))
-console.log(maxProfit([3, 2, 6, 5, 0, 3]))
-console.log(maxProfit([2, 1, 2, 1, 0, 1, 2]))
+// console.log(maxProfit([7, 1, 5, 3, 6, 4]))
+// console.log(maxProfit([7, 6, 4, 3, 1]))
+// console.log(maxProfit([2, 4, 1]))
+// console.log(maxProfit([3, 2, 6, 5, 0, 3]))
+// console.log(maxProfit([2, 1, 2, 1, 0, 1, 2]))
 
 // Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
 
@@ -336,9 +337,39 @@ var searchInsert = function (nums, target) {
   return newArr.indexOf(target)
 }
 
-console.log(searchInsert([1, 3, 5, 6], 5)) // Output: 2
-console.log(searchInsert([1, 3, 5, 6], 2)) // Output: 1
-console.log(searchInsert([1, 3, 5, 6], 7)) // Output: 4
-console.log(searchInsert([1, 3, 5, 6], 0)) // Output: 0
-console.log(searchInsert([1, 2, 3, 4, 5, 10], 2)) // Output 1
-console.log(searchInsert([3, 5, 7, 9, 10], 8)) // Output 3
+// console.log(searchInsert([1, 3, 5, 6], 5)) // Output: 2
+// console.log(searchInsert([1, 3, 5, 6], 2)) // Output: 1
+// console.log(searchInsert([1, 3, 5, 6], 7)) // Output: 4
+// console.log(searchInsert([1, 3, 5, 6], 0)) // Output: 0
+// console.log(searchInsert([1, 2, 3, 4, 5, 10], 2)) // Output 1
+// console.log(searchInsert([3, 5, 7, 9, 10], 8)) // Output 3
+
+// Given: an array containing hashes of names
+
+// Return: a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand.
+
+// iterate through Array. If array.length is > 2, names.name[0], names.name[1], names.name[2], & names.name[3]
+// if === 2 names.name[0] & names.name[1]
+// if === 1 names.name[0]
+
+function list(names) {
+  let list = ''
+  if (names.length === 0) {
+    return list
+  }
+  if (names.length === 1) {
+    return names[0].name
+  }
+  for (let i = 0; i < names.length; i++) {
+    if (i === names.length - 1) {
+      list += ' & ' + names[i].name
+    }
+    else if (i === names.length - 2) {
+      list += names[i].name
+    }
+    else {
+      list += names[i].name + ', '
+    }
+  }
+  return list
+}
