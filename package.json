@@ -30,7 +30,17 @@
       "git add"
     ]
   },
+  "babel": {
+    "plugins": [
+      "transform-object-rest-spread",
+      "transform-es2015-modules-commonjs"
+    ]
+  },
   "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-plugin-transform-react-jsx": "6.24.1",
     "eslint": "4.19.1",
     "eslint-config-standard": "11.0.0",
     "eslint-plugin-import": "2.11.0",

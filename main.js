@@ -589,4 +589,27 @@ function solutionFrgJmp(X, Y, D) {
   return Math.ceil((Y - X) / D)
 }
 
-console.log(solutionFrgJmp(10, 85, 30))
+// console.log(solutionFrgJmp(10, 85, 30))
+
+// 4. Hibachi Numbers
+// Hibachi numbers are the series (2, 2, 2, 8, 32, 512, ...). The series starts with three twos.
+// Each number thereafter is the product of the previous three. Write a function to return the n-th Hibachi number,
+// where n is passed in as a parameter.
+
+function hibachi(n) {
+  let answer = [2, 2, 2]
+  if (n <= 3) {
+    return 2
+  }
+  else {
+    for (let i = 3; i < n; i++) {
+      answer.push(answer[answer.length - 1] * answer[answer.length - 2] * answer[answer.length - 3])
+    }
+    return answer.pop()
+  }
+}
+
+// console.log(hibachi(6))
+// console.log(hibachi(4))
+// console.log(hibachi(2))
+// console.log(hibachi(5))
