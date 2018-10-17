@@ -178,7 +178,7 @@ function highAndLow(numbers) {
 
 // Multiples of 3 or 5
 
-function solution(number) {
+function multiples(number) {
   let sum = 0
   let i = 0
   while (i < number) {
@@ -190,7 +190,7 @@ function solution(number) {
   return sum
 }
 
-// solution(3, 3, 6, 7, 8, 45, 15, 56, 2)
+// multiples(3, 3, 6, 7, 8, 45, 15, 56, 2)
 
 var majorityElement = function (nums) {
   const sortArr = nums.sort()
@@ -613,3 +613,19 @@ function hibachi(n) {
 // console.log(hibachi(4))
 // console.log(hibachi(2))
 // console.log(hibachi(5))
+
+// Write an algorithm that takes an array and moves all of the zeros to the end,
+// preserving the order of the other elements.
+// iterate through an array
+// if the character = 0, push to end of array.
+
+var moveZeros = function (arr) {
+  let newArr = arr
+  for (let i = newArr.length - 1; i >= 0; i--) {
+    if (arr[i] === 0) {
+      newArr.splice(i, 1)
+      newArr.push(0)
+    }
+  }
+  return newArr
+}
