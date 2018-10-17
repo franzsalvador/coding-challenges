@@ -497,3 +497,16 @@ function solutionAce(A, K) {
 }
 
 // console.log(solutionAce([1, 2, 3, 4], 3))
+
+// OddOccurancesInArray
+
+function solutionOdd(A) {
+  let answer
+  A.forEach(element => {
+    if (A.indexOf(element) === A.lastIndexOf(element)) {
+      answer = element
+    }
+  })
+  return answer
+}
+// console.log(solutionOdd([9, 3, 9, 3, 9, 7, 9]))
