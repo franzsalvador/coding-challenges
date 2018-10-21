@@ -688,4 +688,75 @@ function carsPassing(A) {
   return counter
 }
 
-console.log(carsPassing([0, 1, 0, 1, 1]))
+// console.log(carsPassing([0, 1, 0, 1, 1]))
+
+// An array A consisting of N different integers is given. The array contains integers in the range [1..(N + 1)], which means that exactly one element is missing.
+
+// Your goal is to find that missing element.
+
+// Write a function:
+
+// function solution(A);
+
+// that, given an array A, returns the value of the missing element.
+
+// For example, given array A such that:
+
+//   A[0] = 2
+//   A[1] = 3
+//   A[2] = 1
+//   A[3] = 5
+// the function should return 4, as it is the missing element.
+
+// Write an efficient algorithm for the following assumptions:
+
+// N is an integer within the range [0..100,000];
+// the elements of A are all distinct;
+// each element of array A is an integer within the range [1..(N + 1)].
+
+function findMissing(A) {
+  A.sort()
+
+  if (A.length === 0) {
+    return undefined
+  }
+  for (let i = 0; i < A.length; i++) {
+    if (i === 0) {
+      if (A[0] + 1 !== A[1] && A[2] === A[1] + 1) {
+        return A[1] - 1
+      }
+    }
+    else if (i === A.length - 1) {
+      if (A[i - 1] !== A[i] - 1) {
+        return A[i] - 1
+      }
+    }
+    else if (A[i + 1] !== A[i] + 1) {
+      return A[i] + 1
+    }
+  }
+}
+
+// console.log(findMissing([7, 8, 4, 9]))
+// console.log(findMissing([4, 9, 6, 5]))
+// console.log(findMissing([4, 6, 2, 1]))
+
+// Simple, given a string of words, return the length of the shortest word(s).
+
+// String will never be empty and you do not need to account for different data types.
+
+function findShort(s) {
+  const newArr = s.split(' ')
+  let shortest = newArr[0].length
+  for (let i = 1; i < newArr.length; i++) {
+    if (newArr[i].length < shortest) {
+      shortest = newArr[i].length
+    }
+  }
+  return shortest
+}
+
+console.log(findShort('bitcoin take over the world maybe who knows perhaps'))
+// 3
+console.log(findShort('turns out random test cases are easier than writing out basic ones'))
+// 3
