@@ -822,11 +822,32 @@ function findEvenIndex(arr) {
 //   return index
 // }
 
-console.log(findEvenIndex([1, 2, 3, 4, 3, 2, 1]))
-// ,3, "The array was: [1,2,3,4,3,2,1] \n");
-console.log(findEvenIndex([1, 100, 50, -51, 1, 1]))
-// ,1, "The array was: [1,100,50,-51,1,1] \n");
-console.log(findEvenIndex([1, 2, 3, 4 , 5, 6]))
-// ,-1, "The array was: [1,2,3,4,5,6] \n");
-console.log(findEvenIndex([20, 10, 30, 10, 10, 15, 35]))
-// ,3, "The array was: [20,10,30,10,10,15,35] \n");
+// console.log(findEvenIndex([1, 2, 3, 4, 3, 2, 1]))
+// // ,3, "The array was: [1,2,3,4,3,2,1] \n");
+// console.log(findEvenIndex([1, 100, 50, -51, 1, 1]))
+// // ,1, "The array was: [1,100,50,-51,1,1] \n");
+// console.log(findEvenIndex([1, 2, 3, 4 , 5, 6]))
+// // ,-1, "The array was: [1,2,3,4,5,6] \n");
+// console.log(findEvenIndex([20, 10, 30, 10, 10, 15, 35]))
+// // ,3, "The array was: [20,10,30,10,10,15,35] \n");
+
+// Descending Order
+// Your task is to make a function that can take any non-negative integer as a argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+
+// Examples:
+// Input: 21445 Output: 54421
+
+// Input: 145263 Output: 654321
+
+// Input: 1254859723 Output: 9875543221
+
+function descendingOrder(n) {
+  return parseInt(n.toString().split('').sort().reverse().join(''), 10)
+}
+
+console.log(descendingOrder(0))
+// 0
+console.log(descendingOrder(1))
+// 1
+console.log(descendingOrder(123456789))
+// 987654321
