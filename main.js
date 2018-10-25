@@ -874,6 +874,13 @@ function XO(str) {
   else return false
 }
 
+// optimal solution
+// function XO(str) {
+//   let x = str.match(/x/gi);
+//   let o = str.match(/o/gi);
+//   return (x && x.length) === (o && o.length);
+// }
+
 console.log(XO('xo'))
 // ,true);
 console.log(XO('xxOo'))
