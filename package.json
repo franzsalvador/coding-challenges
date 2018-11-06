@@ -4,7 +4,9 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "tdd": "jest --watchAll",
+    "cover": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -30,17 +32,10 @@
       "git add"
     ]
   },
-  "babel": {
-    "plugins": [
-      "transform-object-rest-spread",
-      "transform-es2015-modules-commonjs"
-    ]
+  "dependencies": {
+    "jest": "^23.6.0"
   },
   "devDependencies": {
-    "babel-core": "6.26.3",
-    "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
-    "babel-plugin-transform-object-rest-spread": "6.26.0",
-    "babel-plugin-transform-react-jsx": "6.24.1",
     "eslint": "4.19.1",
     "eslint-config-standard": "11.0.0",
     "eslint-plugin-import": "2.11.0",
